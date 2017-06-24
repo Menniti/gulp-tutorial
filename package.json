@@ -1,0 +1,20 @@
+{
+  "name": "gulp-tutorial",
+  "version": "1.0.0",
+  "description": "Projeto voltado para iniciantes, apresentando um workflow front-end",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "front-end",
+    "gulp",
+    "task-runner",
+    "node.js"
+  ],
+  "author": "Luiz Menniti",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
