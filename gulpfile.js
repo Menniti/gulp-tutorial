@@ -47,3 +47,33 @@ gulp.task('jpg', function(){
 		// informamos ao gulp, em qual local deverá ser colocado as imagens otimizadas
 		.pipe(gulp.dest('/.dist/img'));
 });
+
+// livereload - browser Sync e Watch Task
+
+// opcao 1 - criando um host
+// Host pelo Browser Sync
+var browserSync = require('browser-sync');
+
+gulp.task('browser-sync', function(){
+	browserSync.init('./dist/css/**', {
+		server: {
+			baseDir: './',
+			index: './views/index.html'
+		}
+	});
+});
+
+// opcao2 - passando um proxy de connecctividade com backend
+// proxy pelo Browser Sync
+var browserSync = require('browser-sync');
+
+gulp.task('browser-sync', function(){
+	browserSync.init('./dist/css/**', {
+		proxy: 'localhost:3333'
+	});
+});
+
+// obs: é possível passar vãrios locais como trigger
+// argumento abaixo das pastas dentro de um array
+// browserSync.init(['./dist/css/**', './views/*.html'], {
+
