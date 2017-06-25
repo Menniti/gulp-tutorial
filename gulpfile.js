@@ -28,3 +28,22 @@ gulp.task('sass', function(){
 });
 
 
+// -------------------------------------------
+
+var imagemin = require('gulp-imagemin');
+// o modulo changed verifica a pasta de de source e destino e avalia se alguma imagem precisa ser otimizada
+var changed = require('gulp-changed');
+
+// nome da task - 'jpg'
+gulp.task('jpg', function(){
+	// definindo as pastar de arquivos a serem processados 
+	gulp.src('./assets/img/**/*.jpg')
+		// faz a verificacao se alguma imagem deverá ser otimizada
+		.pipe(changed('./dist/img'))
+		// estamos passando o parametro progressive:true para otimizacao do jpg
+		.pipe(imagemin({
+			progressive: true
+		}))
+		// informamos ao gulp, em qual local deverá ser colocado as imagens otimizadas
+		.pipe(gulp.dest('/.dist/img'));
+});
