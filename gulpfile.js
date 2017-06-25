@@ -77,3 +77,16 @@ gulp.task('browser-sync', function(){
 // argumento abaixo das pastas dentro de um array
 // browserSync.init(['./dist/css/**', './views/*.html'], {
 
+// ----------------------------------------
+
+// watch task - observar as mudcanas dos arquivos
+
+// qualquer mudanca no arquivo, irá ser caputrada pela task 'watch'.
+// colocamos o 'compass' e 'browser-sync' em um array, para garantir que 
+// ambos sejam executados antes de começar o watch em si.
+// podendo ser executadas quantas tarefas você quiser
+
+
+gulp.task('watch', ['compass', 'browser-sync'], function(){
+	gulp.watch('./assets/sass/*.scss', ['sass']);
+});
